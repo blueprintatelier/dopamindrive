@@ -8,6 +8,8 @@
 <meta name="theme-color" content="#ffffff">
 <meta name="apple-mobile-web-app-title" content="DopaminDrive">
 <title>DopaminDrive</title>
+<link rel="manifest" href="manifest.json">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.19.0/dist/tabler-icons.min.css">
 <style>
 /* Inline SVG icon fallback system */
@@ -1476,6 +1478,7 @@ setInterval(function(){
   var changed=checkDay();checkRec();
   if(changed)renderAll();else{renderTasks();renderStats();}
 },60000);
+if('serviceWorker' in navigator&&(location.protocol==='https:'||location.hostname==='localhost'))navigator.serviceWorker.register('sw.js');
 
 </script>
 </body>
